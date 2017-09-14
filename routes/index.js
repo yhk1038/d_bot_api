@@ -89,7 +89,7 @@ function message(req) {
             res.message.text = '오! 안녕하세요 저희 부족한 인혜좀 잘 부탁드립니다..(하하)'
 
         } else {
-            res.text = '...뭐래'
+            res.message.text = '...뭐래'
         }
     }
 
