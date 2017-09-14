@@ -83,7 +83,8 @@ function message(req) {
 
     } else {
         if (req.includes("사랑해")){
-            res.message.text = 'ㅇㅇ'
+            res.message.text = 'ㅇㅇ';
+            res.keyboard = first_msg.keyboard;
         }
         else if (req.includes('쩌리')){
             res.message.text = '오! 안녕하세요 저희 부족한 인혜좀 잘 부탁드립니다! (하하)';
@@ -96,7 +97,8 @@ function message(req) {
             res.keyboard = first_msg.keyboard;
         }
         else {
-            res.message.text = '...뭐래'
+            res.message.text = '...뭐래';
+            res.keyboard = first_msg.keyboard;
         }
     }
 
