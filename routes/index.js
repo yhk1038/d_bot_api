@@ -26,15 +26,15 @@ var first_msg = {
 /* My router start */
 router.get('/keyboard', function (req, res) {
 
-    // var menu1 = '';
-    // fs.readFile( __dirname + "/../data/" + "sample.json", 'utf8', function (err, data) {
-    //     var menu = data;
-    //     console.log( menu );
+    var menu1 = '';
+    fs.readFile( __dirname + "/../data/" + "sample.json", 'utf8', function (err, data) {
+        var menu = data;
+        console.log( menu );
 
         res.set({
             'content-type': 'application/json'
-        }).send(first_msg);
-    // });
+        }).send(menu);
+    })
 
 });
 
@@ -54,7 +54,7 @@ router.post('/message', function (req, res) {
 
     res.set({
         'content-type': 'application/json'
-    }).send(message(ans));
+    }).send(message(obj.content));
 
 });
 
@@ -92,6 +92,12 @@ function message(req) {
             res.text = '...뭐래'
         }
     }
+
+    if (req === '안녕'){
+        res = first_msg;
+    }
+
+    return res
 }
 
 function keyboard(req) {
