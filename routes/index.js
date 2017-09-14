@@ -94,7 +94,14 @@ function message(req) {
         }
         else if (req === '하는거 봐서~'){
             res.message.text = '서둘러 처음으로 돌아갑니다';
-            res.keyboard = first_msg.keyboard;
+            res.keyboard = {
+                type: "buttons",
+                buttons: [
+                    "나는 용현이야",
+                    "나는 이네야",
+                    "나는 쩌리야"
+                ]
+            };
         }
         else {
             res.message.text = '...뭐래';
