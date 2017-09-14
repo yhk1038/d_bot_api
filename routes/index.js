@@ -86,9 +86,15 @@ function message(req) {
             res.message.text = 'ㅇㅇ'
         }
         else if (req.includes('쩌리')){
-            res.message.text = '오! 안녕하세요 저희 부족한 인혜좀 잘 부탁드립니다..(하하)'
+            res.message.text = '오! 안녕하세요 저희 부족한 인혜좀 잘 부탁드립니다! (하하)';
+            res.keyboard.type = 'buttons';
+            res.keyboard.buttons = ['하는거 봐서~']
 
-        } else {
+        }
+        else if (req === '하는거 봐서~'){
+            res.message.text = '서둘러 처음으로 돌아갑니다'
+        }
+        else {
             res.message.text = '...뭐래'
         }
     }
