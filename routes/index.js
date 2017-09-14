@@ -92,7 +92,8 @@ function message(req) {
 
         }
         else if (req === '하는거 봐서~'){
-            res.message.text = '서둘러 처음으로 돌아갑니다'
+            res.message.text = '서둘러 처음으로 돌아갑니다';
+            res.keyboard = first_msg.keyboard;
         }
         else {
             res.message.text = '...뭐래'
